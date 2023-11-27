@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBarDesign</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li class="li list">
+                <span class="icon">
+                    <span class="material-symbols-outlined">
+                        checkroom
+                    </span>
+                </span>
+                <span class="text">Shop</span>
+            </li>
+            <li class="li list">
+                <span class="icon">
+                    <span class="material-symbols-outlined">
+                        event_list
+                    </span>
+                </span>
+                <span class="text">Discover</span>
+            </li>
+            <li class="li list">
+                <span class="icon">
+                    <span class="material-symbols-outlined">
+                        bookmark_add
+                    </span>
+                </span>
+                <span class="text">Bookmark</span>
+            </li>
+            <li class="li list">
+                <span class="icon">
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                    </span>
+                </span>
+                <span class="text">Cart</span>
+            </li>
+            <li class="li list">
+                <span class="icon">
+                    <span class="material-symbols-outlined">
+                        people
+                    </span>
+                </span>
+                <span class="text">Profile</span>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        let li=document.querySelectorAll('.li')
+
+        li.forEach((item) =>{
+            item.addEventListener('mouseover',()=>{
+                let hoveredItem=item;
+                let hoverdText=hoveredItem.querySelector('.text')
+                let hoverdIcon=hoveredItem.querySelector('.material-symbols-outlined')
+
+                hoverdText.style.opacity="1"
+                hoverdText.style.transform="translateY(20px)"
+                hoverdText.style.transition="0.5s all linear"
+                hoverdText.style.color="#856BAD"
+
+                
+                hoverdIcon.style.transform="translateY(-10px)"
+                hoverdIcon.style.transition="0.5s all ease"
+                hoverdIcon.style.color="#856BAD"
+
+                setTimeout(() => {
+                hoverdIcon.style.transform="translateY(0px) rotate(360deg)"
+                    
+                }, 500);
+
+            })
+
+            item.addEventListener('mouseout',()=>{
+                let hoveredItem=item;
+                let hoverdText=hoveredItem.querySelector('.text')
+                let hoverdIcon=hoveredItem.querySelector('.material-symbols-outlined')
+
+                hoverdIcon.style.transform="translateY(0px)"
+
+                hoverdText.style.transform="translateY(0px)"
+                hoverdText.style.opacity="0"
+                hoverdIcon.style.color="black"
+
+
+
+
+            })
+        })
+    </script>
+
+
+
+</body>
+</html>
